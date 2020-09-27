@@ -8,6 +8,13 @@ import os
 
 
 app = Flask(__name__)
+
+@app.route("/")
+def home():
+    html = "<h3>Sklearn Prediction Home</h3>"
+    return html.format(format)
+
+
 # Load the model
 model = joblib.load('model.joblib')
 @app.route('/api',methods=['POST'])
